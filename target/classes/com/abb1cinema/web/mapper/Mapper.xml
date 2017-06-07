@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.abb1cinema.web.mapper.Mapper">
+   <!-- CREATE -->
+   <insert id="registerCustomer">
+   INSERT INTO Customer(id, pw, name, gender, birth, phone, email, point,address) VALUES (#{id},#{pw},#{name},#{gender},#{birth},#{phone},#{email},'0',#{address});
+   </insert>
+   <insert id="postReservation">
+   INSERT INTO Reservation(id, reg_date, canceled, price, hcount, customer_id, showing_seq) 
+   VALUES (#{id},#{reg_date},#{canceled},#{price},#{hcount},#{customer_id},#{showing_seq});
+   </insert>
+   <insert id="writeArticle">
+   INSERT INTO Article(article_type, title, content, file, reg_date, hits, customer_id, multiplex_seq) 
+   VALUES (#{article_type},#{title},#{content},#{file},#{reg_date},#{hits},#{customer_id},#{multiplex_seq});
+   </insert>
+   <insert id="writeComment">
+   INSERT INTO Comment(reg_date, content, customer_id, article_seq) 
+   VALUES (#{reg_date},#{content},#{customer_id},#{article_seq});
+   </insert>
+   <insert id="writeReview">
+   INSERT INTO Review(spectator, gpa, content, reg_date, customer_id, movie_seq) 
+   VALUES (#{spectator},#{gpa},#{content},#{reg_date},#{customer_id},#{movie_seq});
+   </insert>
+   <insert id="registerMovie" parameterType="hashMap">
+   INSERT INTO Movie(title, count, grade,released, info, synopsys, male_p,female_p, trailer_url,trailer_main,pic_main, pic_director, name_director, pic_actor, name_actor) VALUES (#{title},'0',#{grade},#{released},#{info},#{synopsys},'0','0',#{trailer_url},#{trailer_main},#{pic_main},#{pic_director},#{name_director},#{pic_actor},#{name_actor})
+   </insert>
+   <insert id="registerNotice" parameterType="hashMap">
+   INSERT INTO Notice(file, title, content, reg_date, hits) 
+   VALUES (#{file},#{title},#{content},#{reg_date},'0')
+   </insert>
+   <insert id="registerShowing" parameterType="hashMap">
+   INSERT INTO Showing(start_time, end_time, show_date, price, movie_seq, theater_seq)
+   VALUES(#{start_time},#{end_time},#{show_date},#{price},#{movie_seq},#{theater_seq})
+   </insert>
+   
+   
+   
+   <!-- READ ONE -->
+   <select id="findCustomer" resultType="com.abb1cinema.web.domain.Customer" parameterType="hashMap">
+   SELECT * FROM Customer WHERE id = #{id}
+   </select>
+   <select id="getArticle" resultType="com.abb1cinema.web.domain.Article" parameterType="hashMap">
+   SELECT * FROM Article WHERE seq = #{seq};
+   </select>
+   <select id="getNotice" resultType="com.abb1cinema.web.domain.Notice" parameterType="hashMap">
+   SELECT * FROM Notice WHERE seq = #{seq};
+   </select>
+   <select id="findCustomerByName" resultType="com.abb1cinema.web.domain.Customer" parameterType="hashMap">
+   SELECT * FROM Customer WHERE name = #{name}
+      <if test="email != null">
+      AND email = #{email}
+      </if>
+   </select>
+   <select id="findCustomerById" resultType="com.abb1cinema.web.domain.Customer" parameterType="hashMap">
+   SELECT * FROM Customer WHERE id = #{id}
+      <if test="email != null">
+      AND email = #{email}
+      </if>
+   </select>
+   <select id="getTimetable" resultType="com.abb1cinema.web.domain.Timetable" parameterType="hashMap">
+   SELECT * FROM Timetable WHERE shoSeq = ${shoSeq}
+   </select>
+   <select id="findTimetable" resultType="com.abb1cinema.web.domain.Timetable" parameterType="hashMap">
+   SELECT * FROM Timetable WHERE ${key} = #{value}
+   </select>
+   <select id="getTheater" resultType="com.abb1cinema.web.domain.Theater" parameterType="hashMap">
+   SELECT * FROM Theater WHERE ${key}=#{value}
+   </select>
+   <select id="getShowing" resultType="com.abb1cinema.web.domain.Showing" parameterType="hashMap">
+   SELECT * FROM Showing WHERE ${key}=#{value} AND ${key2}=#{value2} AND ${key3}=#{value3}
+   </select>
+   
+   
+   
+   <!-- READ SOME -->
+   <select id="getNoticeList" resultType="com.abb1cinema.web.domain.Notice" parameterType="hashMap">
+   SELECT * FROM Notice ORDER BY seq DESC;
+   </select>
+   <select id="getCommentList" resultType="com.abb1cinema.web.domain.Comment" parameterType="hashMap">
+   SELECT * FROM Comment WHERE article_seq = #{seq} ORDER BY reg_date DESC;
+   </select>
+   <select id="getMultiplexList" resultType="com.abb1cinema.web.domain.Multiplex" parameterType="hashMap">
+   SELECT * FROM Multiplex;
+   </select>
+   <select id="getTheaterList" resultType="com.abb1cinema.web.domain.Theater" parameterType="hashMap">
+   SELECT * FROM Theater
+      <if test="key != null">
+      WHERE multiplex_seq = ${seq};
+      </if>
+   </select>
+   <select id="getInfoList" resultType="com.abb1cinema.web.domain.Information" parameterType="hashMap">
+   SELECT * FROM Information 
+      <if test="key1 != null">
+      WHERE ${key1}=#{value1} 
+      </if>
+      <if test="key2 != null">
+      AND ${key2}=#{value2} 
+      </if>
+      <if test="key3 != null">
+      AND ${key3}=#{value3}
+      </if>
+      <if test="key4 != null">
+      AND ${key4} != #{value4}
+      </if>
+      <if test="orderBy != null">
+      ORDER BY ${orderBy}
+      </if>
+      <if test="resSeq != null">
+      ORDER BY resSeq DESC;
+      </if>
+   </select>
+   <select id="getReservationList" resultType="com.abb1cinema.web.domain.Reservation" parameterType="hashMap">
+   SELECT * FROM Reservation WHERE customer_id=#{id}
+   </select>
+   <select id="getMovieList" resultType="com.abb1cinema.web.domain.Movie" parameterType="hashMap">
+   SELECT * FROM Movie;
+   </select>
+   <select id="getReviewList" resultType="com.abb1cinema.web.domain.Review" parameterType="hashMap">
+   SELECT * FROM Review ORDER BY seq DESC;
+   </select>
+   <select id="getArticleList" resultType="com.abb1cinema.web.domain.Article" parameterType="hashMap">
+   SELECT * FROM Article 
+      <if test="title != null">
+      WHERE title like '%${title}%' 
+      </if>
+      <if test="content != null">
+      WHERE content like '%${content}%' 
+      </if>
+      <if test="both != null">
+      WHERE title like '%${both}%' OR content like '%${both}%' 
+      </if>
+   ORDER BY seq DESC;
+   </select>
+   <select id="getShowingList" resultType="com.abb1cinema.web.domain.Showing" parameterType="hashMap">
+   SELECT * FROM Showing;
+   </select>
+   <select id="getTimetableList" resultType="com.abb1cinema.web.domain.Timetable" parameterType="hashMap">
+   SELECT * FROM Timetable 
+   <if test="key1 != null">
+      WHERE ${key1} = #{value1}
+      </if>
+      <if test="key2 != null">
+      AND ${key2} = #{value2}
+      </if>
+      <if test="key3 != null">
+      AND ${key3} = #{value3}
+      </if>
+   </select>
+   <select id="getDistinctShowingList" resultType="com.abb1cinema.web.domain.Showing" parameterType="hashMap">
+   SELECT DISTINCT ${column1}
+      <if test="column2 != null">
+      , ${column2}
+      </if>
+   FROM Showing;
+   </select>
+   <select id="getCustomerFindList" resultType="com.abb1cinema.web.domain.Customer" parameterType="hashMap">
+   SELECT id,pw,name,email FROM Customer;
+   </select>
+   <select id="getAdminReservationList" resultType="com.abb1cinema.web.domain.Information" parameterType="hashMap">
+   SELECT * FROM Information WHERE ${key} LIKE '%${value}%' AND resCanceled=#{canceled}
+   </select>
+   <select id="getAdminShowList" resultType="com.abb1cinema.web.domain.Timetable" parameterType="hashMap">
+   SELECT * FROM Timetable WHERE ${key} LIKE '%${value}%'
+   </select>
+   <select id="getMovieDetail" resultType="com.abb1cinema.web.domain.Movie" parameterType="hashMap">
+   SELECT * FROM Movie WHERE title LIKE '%${value}%'
+   </select>
+   <select id="getStatistic" resultType="com.abb1cinema.web.domain.Statistic" parameterType="hashMap">
+   SELECT revGpa, revMovieSeq, movTitle, movGrade, movCount, movPicMain FROM Statistic;
+   </select>
+   <select id="getAdminCustomerList" resultType="com.abb1cinema.web.domain.Customer" parameterType="hashMap">
+   SELECT * FROM Customer WHERE ${key} LIKE '%${value}%'
+   </select>
+   <!-- 혜선 -->
+   <select id="getGenderMovieRank" resultType="String" parameterType="hashMap">
+   SELECT movSeq FROM Information WHERE ${key1} = #{value1} AND ${key2} != #{value2} ORDER BY movSeq
+   </select>
+   
+   
+   <!-- UPDATE -->
+   <update id="updateArticle">
+   UPDATE Article 
+   SET article_type = #{article_type}, 
+   title = #{title}, 
+   content = #{content},
+   file = #{file}
+   WHERE seq = ${seq}
+   </update>
+   <update id="updateArticleAdminReply">
+   UPDATE Article 
+   SET answer = 'O'
+   WHERE seq = ${seq}
+   </update>
+   <update id="updateReservation">
+   UPDATE Reservation set canceled = 'Y' WHERE id = #{id}
+   </update>
+   <update id="updateHits">
+   UPDATE ${group}
+   <set>
+      <if test="hits != null"> hits=#{hits} </if>
+   </set>
+   WHERE seq=#{seq};
+   </update>
+   <update id="updateCount">
+   UPDATE ${group}
+   <set>
+      <if test="count != null"> count=#{count} </if>
+   </set>
+   WHERE seq=#{seq};
+   </update>
+   <update id="updateAdminMovie">
+   UPDATE Movie 
+   SET 
+   title=#{title},
+   grade=#{grade},
+   released=#{released},
+   info=#{info},
+   synopsys=#{synopsys},
+   name_director=#{name_director},
+   name_actor=#{name_actor},
+   trailer_url=#{trailer_url} 
+   WHERE seq=${seq}
+   </update>
+   <update id="updateCustomer">
+   UPDATE Customer
+   <set>
+     <if test="id != null"> id=#{id}, </if>
+     <if test="pw != null"> pw=#{pw}, </if>
+     <if test="name != null"> name=#{name}, </if>
+     <if test="birth != null"> birth=#{birth}, </if>
+     <if test="phone != null"> phone=#{phone}, </if>
+     <if test="gender != null"> gender=#{gender}, </if>
+     <if test="address != null"> address=#{address}, </if>
+     <if test="email != null"> email=#{email}, </if>
+     <if test="point != null"> point=#{point}, </if>
+   </set>
+   WHERE id=#{id};
+   </update>
+   <update id="updateNotice">
+   UPDATE Notice
+   <set>
+     <if test="content != null"> content=#{content}, </if>
+     <if test="file != null"> file=#{file}, </if>
+     <if test="reg_date != null"> reg_date=#{reg_date}, </if>
+     <if test="title != null"> title=#{title}, </if>
+   </set>
+   WHERE seq=#{seq};
+   </update>
+   <update id="updateShowing">
+   Update Showing
+   <set>
+     <if test="showDate != null"> show_date=#{showDate}, </if>
+     <if test="startTime != null"> start_time=#{startTime}, </if>
+     <if test="endTime != null"> end_time=#{endTime}, </if>
+   </set>
+   WHERE seq=#{seq};
+   </update>
+   <update id="updateMainMovie">
+   UPDATE Movie SET trailer_main=#{value1} WHERE ${key}=#{value2}
+   </update>
+   
+   
+   
+   <!-- DELETE -->
+   <delete id="deleteCustomer" parameterType="hashMap">
+   DELETE FROM Customer WHERE id = #{id}
+   </delete>
+   <delete id="delete" parameterType="hashMap">
+   DELETE FROM ${group} WHERE ${key} = #{value}
+   </delete>
+   
+   
+   
+   <!-- UTIL(COUNT, EXIST, SUM ...) -->
+   <select id="existCustomer" resultType="int" parameterType="hashMap">
+   SELECT COUNT(*) FROM Customer WHERE id=#{id}
+   </select>
+   <select id="count" resultType="int" parameterType="hashMap">
+   SELECT COUNT(*) FROM ${group}
+      <if test="key != null">
+      WHERE ${key} = #{value};
+      </if>
+   </select>
+   <select id="existCustomerByName" resultType="int" parameterType="hashMap">
+   SELECT COUNT(*) FROM Customer WHERE name=#{name} AND email=#{email}
+   </select>
+   <select id="existCustomerById" resultType="int" parameterType="hashMap">
+   SELECT COUNT(*) FROM Customer WHERE id=#{id} AND email=#{email}
+   </select>
+   <select id="countSome" resultType="int" parameterType="hashMap">
+      SELECT COUNT(*) FROM ${group}
+      <if test="key1 != null">
+      WHERE ${key1} like '%${value1}%'
+      </if>
+      <if test="key2 != null">
+      WHERE ${key2} like '%${value2}%' OR ${key3} like '%${value3}%'
+      </if>
+   </select>
+   <select id="checkMovieTitle" resultType="int" parameterType="hashMap">
+   SELECT COUNT(*) FROM Movie WHERE title LIKE '%${value}%'
+   </select>
+   <select id="findMovieSeq" resultType="int" parameterType="hashMap">
+   SELECT COUNT(*) FROM Movie WHERE seq=#{seq}
+   </select>
+   <select id="exist" resultType="int" parameterType="hashMap">
+   SELECT COUNT(*) FROM ${group} 
+      <if test="key != null">
+      WHERE ${key} LIKE '%${value}%'
+      </if>
+      <if test="key2 != null">
+      AND ${key2} LIKE '%${value2}%'
+      </if>
+      <if test="key3 != null">
+      AND ${key3} != #{value3}
+      </if>
+      <if test="key4 != null">
+      AND ${key4} LIKE '%${value4}%'
+      </if>
+      <if test="key5 != null">
+      AND ${key5} LIKE '%${value5}%'
+      </if>
+   </select>
+   <select id="getSales" resultType="int" parameterType="hashMap">
+   SELECT SUM(resPrice) FROM ${group} WHERE ${key} != #{value}
+   </select>
+</mapper>

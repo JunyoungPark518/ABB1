@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="public" template="/WEB-INF/views/layout/public.jsp">
+		<put-attribute name="title" value="ABB1Cinema"/>
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="gnb" value="/WEB-INF/views/common/gnb.jsp"/>
+		<put-attribute name="wrapper" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+	</definition>
+	<definition name="public:*" extends="public">
+		<put-attribute name="wrapper" value="/WEB-INF/views/{1}.jsp"/>
+	</definition>
+	<definition name="googlemap" template="/WEB-INF/views/layout/map.jsp">
+		<put-attribute name="title" value="ABB1Cinema"/>
+		<put-attribute name="header" value="/WEB-INF/views/googlemap/header.jsp"/>
+		<put-attribute name="gnb" value="/WEB-INF/views/common/gnb.jsp"/>
+		<put-attribute name="wrapper" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/googlemap/footer.jsp"/>
+	</definition>
+	<definition name="googlemap:*" extends="googlemap">
+		<put-attribute name="wrapper" value="/WEB-INF/views/googlemap/{1}.jsp"/>
+	</definition>
+</tiles-definitions>

@@ -1,0 +1,889 @@
+@CHARSET "UTF-8";
+/*------ main ------*/
+.noHover a:hover{
+	color : #efebdb;
+}
+.noHover a{
+	color : #efebdb;
+}
+.noHover{
+	color : #efebdb;
+}
+.noHover:hover{
+	color : #efebdb;
+}
+.abb1_navbar-default{
+	    background-color: #f9f6ec;
+    border-color: #e7e7e7;
+}
+.abb1_navbar {    position: relative;
+    min-height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.01);
+}
+.abb1_navbar_container{
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-top: 1px solid #cdc197;
+    border-bottom: 1px solid #ab9a60;
+}
+.abb1_facebook{
+	font-size: 14px; font-weight: bold; 
+}
+.abb1_gnb {list-style-type: none; display: inline-block;}
+.abb1_gnb li {float: left;}
+.abb1_gnb a {font-size: 15px;color: #5b5b5b; text-align: center; padding: 0 30px; border-left: 1px solid #5b5b5b; border-right: 1px solid #5b5b5b;}
+.abb1_gnb_tab{border-bottom: 1px solid #c0c0c0; margin-top: 15px;}
+.abb1_tooltip { position: relative; display: inline-block; border-bottom: 1px dotted black;}
+.abb1_tooltip .abb1_tooltiptext {font-size: 10px; width: 30px; visibility: hidden; background-color: #5b5b5b; color: #fff; text-align: center; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 1; bottom: 3px;}
+.abb1_tooltip:hover .abb1_tooltiptext { visibility: visible; }
+.abb1_tbboxoffice {margin: 0 auto; width: 1035px; text-align: center}
+.abb1_tbboxoffice tr:first-child{height: 80px}
+.abb1_tbboxoffice_firstcol {width: 285px; background-color: #2A2E33; color: #BFB689;}
+.abb1_tbboxoffice_firstcol a {font-size: 14px; color: white; text-align: center; text-decoration: none; padding: 0 20px 0 20px; }
+.abb1_main_reservebtn {background-color: #ee1c25; color: white; font-weight: bold; font-size: 20px; height: 48px;}
+.abb1_rank {list-style-type: none; display: inline-block;}
+.abb1_rank li { float: left; display: table; height: 30px; color: #1a1917; font-size: 14px; font-weight: bold; letter-spacing: -0.5px;}
+.abb1_rank a:hover{color: red; text-decoration: none}
+.abb1_rank_grade{display: inline-block; overflow: hidden; vertical-align: middle; width: 24px; height: 24px; margin-right: 5px; text-indent: -99999em;}
+.abb1_rank_moviename{text-align: left; display: inline-block;width: 150px;height: 17px;line-height: 17px;vertical-align: middle;text-overflow: ellipsis; overflow: hidden;white-space: nowrap;}
+.abb1_memRk{ float: right;display: inline-block; height: 30px; line-height: 30px; color: #666; font-size: 13px;}
+.abb1_slidePoster{list-style-type: none; display: inline-block;}
+.abb1_slidePoster li {float: left;}
+.abb1_slidePoster a {font-size: 17px;color: #5b5b5b; text-align: center; text-decoration: none; padding: 0 20px;}
+.abb1_slideBtn {padding-top: 110px}
+.abb1_no_padding{padding: 0;}
+.abb1_width_100{width:100%;}
+.abb1_text_center{text-align: center;}
+.abb1_eventBxMain{color: #231f20; font-size: 25px; margin-bottom: 20px; font-style: italic;}
+
+/*------ admin -------*/
+.abb1_admin_settings{margin: 0 auto; text-align: left;}
+.abb1_admin_maintext{    font-size: 27px;
+    color: #988d8d;
+    margin: 20px 0 20px 50px;}
+.abb1_admin_reservation_table{text-align: center; margin: 0 auto; width: 100%}
+.abb1_admin_reservation_table th{    text-align: center;
+    border-top: 2px solid #777;
+    border-bottom: 2px solid #777;
+    background: #efebdb;
+    padding: 5px 0;}
+.abb1_admin_reservation_table tr td{
+	    border-bottom: 1px solid #777;
+	    padding: 5px;
+}
+.abb1_admin_reservation_category{
+	    height: 34px;
+    padding: 5px;
+}
+.abb1_admin_reservation_search_keyword{
+	font-size: 13px;
+	    height: 34px;
+    width: 200px;
+    padding: 5px;
+}
+.abb1_admin_reservation_search_btn{
+	    height: 34px;
+	    font-size: 13px;
+    width: 60px;
+    background: white;
+}
+.abb1_admin_customer_search_keyword{
+	font-size: 13px;
+	    height: 34px;
+    width: 200px;
+    padding: 5px;
+}
+.abb1_admin_customer_search_btn{
+	    height: 34px;
+	    font-size: 13px;
+    width: 60px;
+    background: white;
+}
+.abb1_admin_movie_management_table{
+	margin-top: 50px;
+}
+.abb1_admin_movie_management_table tr td {
+	padding: 5px;
+}
+.abb1_admin_movie_management_table tr td:first-child{
+	font-weight: bold;
+}
+.abb1_admin_movie_management_table input{
+	width: 100%
+}
+.abb1_admin_movie_management_table textarea{
+	width: 100%
+}
+.abb1_admin_movie_management_btns{
+	width: 450px; text-align: right; margin-top: 30px
+}
+.abb1_admin_movie_management_btns input{
+	width: 50px;
+    background: white;
+}
+.abb1_admin_faq_table {
+	width: 700px;
+	text-align: center;	
+	margin: 30px;
+}
+.abb1_pagination_faq{
+	width: 760px;
+}
+.abb1_admin_faq_table th{
+	text-align: center;	
+    border-top: 2px solid #777;
+    border-bottom: 2px solid #777;
+    padding: 3px 0;
+    color: #3e393a;
+}
+.abb1_admin_faq_table tr td{
+	text-align: center;	
+    border-bottom: 1px solid #a8a8a8;
+    padding: 3px 0;
+    color: #3e393a;
+}
+.abb1_admin_faq_table{
+	background: white;
+}
+.abb1_admin_notice_table {
+	width: 500px;
+	text-align: center;	
+	margin: 30px;
+}
+.abb1_admin_notice_table th{
+	text-align: center;	
+    border-top: 2px solid #777;
+    border-bottom: 2px solid #777;
+    padding: 3px 0;
+    color: #3e393a;
+}
+.abb1_admin_notice_table tr td{
+	text-align: center;	
+    border-bottom: 1px solid #a8a8a8;
+    padding: 3px 0;
+    color: #3e393a;
+}
+.abb1_admin_notice_table input{
+	background: white;
+}
+.abb1_admin_notice_register{
+	margin: 30px 0 30px 400px;
+	font-size: 13px;
+	color: #777;
+}
+.abb1_admin_notice_register input{
+	background: white;
+	width: 50px;
+	padding: 5px;
+}
+.abb1_admin_pagination{
+	margin: 10px;
+}
+.abb1_pagination_notice{
+	width: 560px;
+}
+.abb1_admin_pagination a{
+	padding: 5px;
+	color: #777;
+}
+.abb1_admin_pagination a.on{
+	padding: 5px;
+    background: black;
+    color: white;
+}
+.abb1_admin_customer_table{
+	    margin-top: 30px;
+	}
+.abb1_admin_customer_table table{
+	width: 600px;
+}
+.abb1_admin_customer_table th{
+	text-align: center;	
+    border-top: 2px solid #777;
+    border-bottom: 2px solid #777;
+    padding: 3px 0;
+    color: #3e393a;
+}
+.abb1_admin_customer_change{
+	margin: 50px;
+}
+.abb1_admin_customer_change table{
+	width: 450px;
+}
+.abb1_admin_customer_change tr {
+	height: 40px;
+}
+.abb1_admin_customer_change input[type=button]{
+	margin-top: 30px;
+}
+.abb1_admin_customer_table tr td{text-align: center;	
+    border-bottom: 1px solid #a8a8a8;
+    padding: 3px 0;
+    color: #3e393a;
+}
+.abb1_trailer_check td:first-child{
+	text-align: right;
+}
+.abb1_trailer_check td input{
+	width: 14px;
+}
+.abb1_notice_write_table{width:600px;color:#231f20}
+.abb1_notice_write_table td{border-bottom: 1px solid #dedede; height: 63px; color: #777; vertical-align: middle;}
+.abb1_notice_write_table textarea{width:100%; background: #f5f5f5;margin: 16px 0;    border: 1px solid #dedede;}
+
+/*------ bbs -------*/
+.abb1_bbs_table{width:980px;margin:0 auto;padding:20px 0;color:#231f20}
+.abb1_bbs_table_text{margin: 0 auto;width:900px;text-align: left;padding:10px;}
+.abb1_bbs_table_text>strong{font-size:28px;}
+.abb1_bbs_table .abb1_select_box{float:left;margin-right:5px; width: 124px; height: 28px;}
+.abb1_bbs_table select {width: 124px; height: 28px; }
+.abb1_bbs_table span {float:right;padding-top:8px;color:#231f20 }
+.abb1_submitbtn{float: left;min-width: 50px;text-align: center;height: 28px;border: 0;background: #231f20; color: #fff; font-size: 12px; font-weight: bold;}
+.abb1_searchtext {float: left; height: 28px; border-right: 0;}
+.abb1_category{padding-top:30px;font-size:14px}
+.abb1_bbs_pagination_table td{width: 100px;}
+.abb1_bbs_main_table{width:100%;color:#231f20;line-height:18px;table-layout:fixed}
+.abb1_bbs_main_table tr.notice{font-weight: bold; background: #f9f6ec;}
+.abb1_bbs_main_table th{padding:14px 0 13px;border-bottom:1px solid silver;vertical-align:middle; text-align: center; font-size:13px; background: white;}
+.abb1_bbs_main_table td{padding:15px 10px;border-bottom:1px solid #dedede;color:#666;vertical-align:middle; font-size:13px;text-align:center;}
+.abb1_bbs_main_table td:nth-child(3){text-align: left;}
+
+/*------- bbs detail, notice_detail -------*/
+.abb1_bbs_notice_table tr td{border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; border-collapse: collapse; height: 100px; width: 900px;}
+.abb1_bbs_notice_table tr:nth-child(2){background: #f9f6ec;}
+.abb1_bbs_notice_table span{ text-decoration: none; color: #555;}
+.abb1_bbs_review_result_name{margin-right: 20px;}
+.abb1_bbs_review_result_txt{margin-top:20px;margin-bottom:8px;color:#231f20;font-size:13px;line-height:18px;word-break:break-all}
+.abb1_bbs_review_result_reg_date{font-size: 12px; color: #666}
+.abb1_view_info{margin-bottom: 30px;}
+.abb1_view_info li:first-child{padding-left: 0;background: none;}
+.abb1_view_info li{float:left;margin:0 20px 0 0;font-size:13px;color:#666}
+.abb1_review_result{display:table-cell;width:900px;vertical-align:middle;border-bottom: 1px solid #9d9d9d}
+.abb1_view_content {font-size: 15px;}
+.abb1_bbs_write_btn{background-color: white; color: #231f20;}
+
+/*------- bbs write -------*/
+.abb1_bbs_write_container{padding:50px; width:980px; margin: 0 auto;}
+.abb1_bbs_write_container2{width:980px; margin: 0 auto;}
+.abb1_bbs_write_table{width:980px;color:#231f20}
+.abb1_bbs_write_table td{border-bottom: 1px solid #dedede; height: 63px; color: #777; vertical-align: middle;}
+.abb1_bbs_write_table span.star{color: red;}
+.abb1_bbs_write_text{padding-bottom:20px;font-size:28px}
+.abb1_bbs_write_radio {width: 700px}
+.abb1_bbs_write_radio span{padding-right: 11px;}
+.abb1_write_ddl{height:40px;padding:10px 0 10px 10px;line-height:32px;font-size:14px;color:#231f20}
+.abb1_write_ddl option{font-weight:400;display:block;white-space:pre;min-height:1.2em;padding:0 2px 1px}
+.abb1_write_title{width:100%;height:40px;padding:10px;border:1px solid #dedede;background:#f5f5f5}
+.abb1_bbs_write_btns{text-align: center; padding-top: 30px}
+.abb1_bbs_write_btns a{padding-left: 5px; padding-right: 5px}
+.abb1_bbs_write_btns input{min-width:100px;height:40px;padding:0 10px;border:1px solid #231f20;font-size:16px;font-weight:700}
+.abb1_bbs_write_cancel{background:#fff;color:#231f20}
+.abb1_bbs_write_confirm{color:#cdc197;background:#231f20;}
+.abb1_bbs_write_font{font-size: 12px;}
+.abb1_bbs_write_font>span{color: red;}
+.abb1_board_write_select_multiplex{background-color: white; color: #231f20; font-size: 14px; font-weight: bold; min-width: 102px; height: 35px; line-height: 33px;}
+.abb1_board_write_content{width:100%;height:90%;padding:10px 10px 25px;font-size:13px;color:#777;line-height:22px;background:#f5f5f5;border: 1px solid #dedede; resize: none;}
+
+
+/*------ main id ------*/
+#boxoffice{width:100%; text-align: center; padding-top: 17px;}
+#slidePoster{margin-top: 50px;}
+#bannerbox{margin-top: 50px; border-top: 1px solid #c0c0c0; border-bottom: 1px solid #c0c0c0; width:100%; text-align: center;}
+#eventBxMain{padding: 50px 0; border-bottom: 1px solid #c0c0c0; }
+#bnShortcuts{padding: 50px 0; border-top: 1px solid #c0c0c0; border-bottom: 1px solid #c0c0c0; width:100%; text-align: center;}
+
+/*------ bbs id -------*/
+#bbs_pagination{ margin-top: 30px; text-align: center;}
+#bbs_pagination a{padding:0 3px; line-height:24px;margin:0 3px;color:#666;text-align:center;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+#bbs_pagination a.on{background-color: #231f20; color: white;}
+#bbs_pagination a:hover{background-color: #594f52; color: white;}
+#bbs_pagination img{background-color: white;}
+
+/*------- bbs notice, review id -------*/
+#bbs_review_contents{width:100%;border:1px solid #e8e8e8;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;font-size:14px;color:#666}
+#bbs_review_contents_submit{width:100%;height:87%;background:#231f20;font-size:18px;font-weight:700;color:#cdc197;text-align:center;line-height:23px;border:0}
+
+/*------ reservation -------*/
+.abb1_calendar{font-size: 22px;padding: 0 30px;}
+.abb1_reservation{width:100%;background: #f9f6ec;}
+.abb1_reservation_main_form{ margin: 0 auto; width: 1000px}
+.abb1_reservation_calendar {width: 100%}
+.abb1_reservation_calendar span{font-size: 22px; }
+.abb1_reservation_multiplex {background: white; width: 100%}
+.abb1_reservation_multiplex span{float:left;font-size:20px;padding:0 0 0 10px;font-weight:700;color:#231f20}
+.abb1_reservation_multiplex tr td{border: 1px solid #e0dfdf; padding: 5px}
+.abb1_reservation_movielist li {width:100%; padding: 5px;}
+.abb1_reservation_movielist li a.on{background:url(../img/reservation/check_btn.png) 10px center no-repeat;border:1px solid #999}
+.abb1_reservation_movielist li a{display:block;padding:9px 10px 9px 29px;border:1px solid #fff;color:#231f20;font-size:14px;line-height:22px;word-break:break-all}
+.abb1_reservation_tab_cont{font-size:16px;font-weight:700}
+.abb1_reservation_tab_scroll{height:415px;padding-left:10px;overflow-y:auto}
+.abb1_reservation_theater_zone{position:relative}
+.abb1_reservation_theater_zone li{padding:8px 0}
+.abb1_reservation_area_zone>a{display:block;width:116px;height:40px;line-height:40px;padding-left:13px;color:#666;text-align:left;vertical-align:middle;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.abb1_reservation_area_zone>a.on{width:107px;padding-left:22px;background:url(../img/reservation/bullet03.gif) 10px center no-repeat #231f20;color:#fff!important;letter-spacing:-1px}
+.abb1_reservation_area_cont{display:none;position:absolute;left:131px;top:0}
+.abb1_reservation_area_cont.on{display:block}
+.abb1_reservation_area_list{overflow:hidden;width:412px}
+.abb1_reservation_area_list li{float:left;margin:0 0 8px 7px;display:table}
+.abb1_reservation_area_list li a{overflow:hidden;display:table-cell;vertical-align:middle;width:129px;height:40px;border:1px solid #efefef;background:#efefef;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;line-height:16px;font-size:12px;color:#666;text-align:center;letter-spacing:-1px}
+.abb1_reservation_area_list a.on{padding:0 25px;border:1px solid #999;color:#231f20;font-weight:700;background:url(../img/reservation/check_btn.png) 10px 50% no-repeat #fff}
+.abb1_reservation_confirm{width:980px;min-height:33px;margin:0 auto;box-sizing:border-box;-webkit-box-sizing:border-box}
+.abb1_reservation_time{margin-bottom:10px}
+.abb1_reservation_confirm .abb1_reservation_time .sub_tit02{margin-bottom:0}
+.abb1_reservation_confirm .abb1_reservation_time .sub_etc{margin-left:8px;font-size:13px;color:#777;font-weight:400}
+.abb1_reservation_time .abb1_reservation_timefr{float:right;margin-top:10px}
+.abb1_reservation_timetit{width:980px;padding:20px;background:#efebdb;font-size:20px;color:#231f20;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;font-weight:700;margin-left: 4px;}
+.abb1_reservation_time_a .abb1_reservation_timeline{padding:0 20px 30px}
+.abb1_reservation_time_a .abb1_reservation_timeline dt{margin-top:0;font-size:16px;font-weight:700;color:#231f20;background:0 0}
+.abb1_reservation_time_a .abb1_reservation_timeline dt [class^=grade_]{margin-right:10px}
+[class^=grade_]{display:inline-block;overflow:hidden;vertical-align:middle;width:20px;height:20px;margin-right:5px;text-indent:-99999em}
+.abb1_reservation_timeline dd{padding:15px 34px 10px 25px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}
+.abb1_reservation_time_a .abb1_reservation_timeline dd{padding:0 5px}
+.abb1_reservation_timeline dd .abb1_reservation_theatertime{overflow:hidden;width:935px}
+.abb1_reservation_timeline dd .abb1_reservation_theatertime li{float:left;width:115px;margin:10px -1px 0 0;background:#fff;border:1px solid #ebeaea;text-align:center}
+.abb1_reservation_timeline dd .abb1_reservation_theatertime li a{display:block}
+.abb1_reservation_timeline dd .abb1_reservation_theatertime li .abb1_reservation_cined2{display:block;height:21px;line-height:21px;color:#666;border-bottom:1px solid #e5e5e5}
+.abb1_reservation_timeline dd .abb1_reservation_theatertime li .abb1_reservation_cined2 em:first-child{font-size:12px;background:0 0!important;padding:0 3px}
+.abb1_reservation_timeline dd .abb1_reservation_theatertime li .abb1_reservation_clock{display:block;height:38px;line-height:38px;border-bottom:1px solid #e5e5e5;font-size:15px;color:#666;font-weight:700}
+.abb1_reservation_timeline dd .abb1_reservation_theatertime li .abb1_reservation_ppnum{display:block;height:19px;line-height:19px;color:#666;font-size:12px}
+.abb1_reservation_timeline dd .abb1_reservation_theatertime li .abb1_reservation_ppnum em{color:#231f20}
+.abb1_reservation_area{margin-left: 10px;}
+.abb1_reservation_area li{padding: 10px;}
+/*------ reservation_seat -------*/
+.abb1_seat{width:100%; background: #f9f6ec;}
+.abb1_reservation_seat_form{ margin: 0 auto; text-align: center; width: 980px}
+.abb1_seat_maintext {text-align: left;}
+.abb1_seat_maintext span{font-size: 28px; color: #231f20;}
+.abb1_seat_screen{    display: block;
+    margin-bottom: 15px;
+    line-height: 25px;
+    background: url(../img/reservation/bg_screen.gif) no-repeat 0 0;
+    font-size: 20px;
+    color: #231f20;
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+}
+.abb1_seat_area{
+       overflow: auto;
+    position: relative;
+    padding: 20px 0;
+    background: #f9f8f3;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+   text-align: center;
+}
+.abb1_seat_table{
+   width: 980px;
+   background: #f9f8f3;
+}
+.abb1_seat_table{
+   margin: 0 auto; width: 400px; text-align: center; padding-bottom: 50px
+}
+.abb1_seat_table tr{
+   height: 35px;
+}
+.abb1_seat_table td a{
+   margin: 0 2px;
+   padding: 6px 6px;
+   font-size: 14px;
+   background-color: #848484;
+   color: white;
+}
+.abb1_seat_table td a:hover{
+   margin: 0 2px;
+   padding: 6px 6px;
+   font-size: 14px;
+   background-color: #181818;
+   color: white;
+}
+.abb1_seat_table td a.selected{
+   margin: 0 2px;
+   padding: 6px 6px;
+   font-size: 14px;
+   background-color: #181818;
+   color: white;
+}
+
+.abb1_seat_table .reserved{
+   margin: 0 2px;
+   border: 1px solid #ff8080;
+   padding: 5px 5px;
+   font-size: 14px;
+   background-color: #c2c2c2;
+   color: #b2b2b2;
+}
+.abb1_seat_table .reserved:hover{
+   margin: 0 2px;
+   border: 1px solid #ff8080;
+   padding: 5px 5px;
+   font-size: 14px;
+   background-color: #c2c2c2;
+   color: #b2b2b2;
+}
+.abb1_seat_table a.disabled{
+   margin: 0 2px;
+   border: 1px solid #ff8080;
+   padding: 5px 5px;
+   font-size: 14px;
+   background-color: #c2c2c2;
+   color: #b2b2b2;
+}
+.abb1_seat_table a.disabled:hover{
+   margin: 0 2px;
+   border: 1px solid #ff8080;
+   padding: 5px 5px;
+   font-size: 14px;
+   background-color: #c2c2c2;
+   color: #b2b2b2;
+}
+.abb1_aisle{
+   margin: 0px 14px;
+}
+.abb1_seat_info{
+   background: white; height: 100px; width: 100%
+}
+.abb1_seat_info img{
+   margin-top: 25px;
+}
+.abb1_ticketing_settings{
+   background: #33373a; width: 100%; height:234px; min-width: 900px;
+}
+.abb1_ticketing_table{
+   margin: 0 auto; width: 1000px;
+}
+.abb1_ticketing_table td{
+   width: 333px;
+   color: #cdc197;
+}
+.abb1_ticketing_table span{
+   color: white;
+   font-size: 13px;
+}
+.abb1_ticketing_tr div{
+   margin: 12px;
+}
+.abb1_ticketing_table .abb1_ticketing_tr2 td{
+   width: 134px;
+   color: white;
+}
+.abb1_ticketing_moviename{
+       font-weight: bold;
+    padding-bottom: 15px;
+}
+.abb1_ticketing_type{
+       padding-bottom: 40px;
+}
+.abb1_ticketing_cost{
+   text-align: right; font-size: 23px; height: 87px;
+}
+.abb1_ticketing_paying{
+   text-align: center;
+}
+.abb1_ticketing_paying div{
+   padding-bottom: 70px;
+   font-size: 30px;
+}
+.abb1_ticketing_paying input{
+   width: 100%; height: 50px; background:#cdc197; color: #33373a; font-weight: bold;
+}
+
+/*------ footer ------*/
+#footer{width:100%; text-align: center; background-color: #f5f5f5;}
+
+/*------ total settings ------*/
+a {text-decoration: none; color:#2A2E33;}
+a:hover {text-decoration: none; color: none;}
+ol, ul, li {list-style: none;}
+textarea{resize: none;}
+body {
+    font-family: "나눔 고딕", 'Nanum Gothic', 'ng';
+}
+
+
+/*======================================혜선======================================*/
+/*---height---*/
+.abb1_height_10{height: 10px;}
+/*---weight---*/
+.abb1_width_70{width: 70%;}
+/*---width_center---*/
+.abb1_width_center{margin:0 auto;width:100%;text-align:center;}
+.abb1_width_center_w900{margin:0 auto;width:900px;text-align:center;}
+.abb1_width_center_w800{margin:0 auto;width:800px;text-align:center;}
+.abb1_width_center_w50{margin:0 auto;width:50%;}
+.abb1_width_center_w40{margin:0 auto;width:40%;padding-left: 120px;}
+.abb1_width_center_40{margin:0 auto;width:40%;}
+.abb1_width_center_w30{margin:0 auto;width:30%;}
+/*---width_right---*/
+.abb1_width_right{margin:0 auto;width:1000px;text-align:right;}
+.abb1_width_right_w500{margin:0 auto;width:500px;text-align:rigth;}
+/*---width_left---*/
+.abb1_width_left{margin:0 auto;width:1000px;text-align:left;}
+.abb1_width_left_950{margin:0 auto;width:950px;text-align:left;}
+/*---width---*/
+.abb1_width_60{width: 60%;}
+.abb1_width_40{width: 40%;}
+.abb1_width_448{width: 448px;}
+.abb1_width_200{width: 200px;}
+/*----height-----*/
+.abb1_height_0{height: 0px;}
+
+/*---ul li inline-block---*/
+.abb1_ul_inline{list-style-type:none;display:inline-block;}
+.abb1_li_inline{float:left;padding-right:20px;}
+/*---font---*/
+.abb1_font_bold{font-weight:700;}
+.abb1_font_serif{font-family:serif;}
+.abb1_font_italic{font-style:italic;}
+.abb1_font_size_20{font-size: 20px;}
+.abb1_font_size_22{font-size:22px;}
+.abb1_font_size_25{font-size: 25px;}
+/*---color---*/
+.abb1_color_white{color:#ffffff;}
+.abb1_color_black{color:#000000;}
+.abb1_color_bold_brown{color:#231f20;}
+.abb1_color_beige{color:#f9f6ec;}
+.abb1_color_bold_beige{color:#efebdb;}
+.abb1_color_bold_gray{color:#6c6c6c;}
+/*---bgcolor---*/
+.abb1_bgcolor_white{background-color:#ffffff;}
+.abb1_bgcolor_black{background-color:#000000;}
+.abb1_bgcolor_bold_brown{background-color:#231f20;}
+.abb1_bgcolor_beige{background-color:#f9f6ec;}
+.abb1_bgcolor_bold_beige{background-color:#efebdb;}
+/*---margin---*/
+.abb1_margin_top_10{margin-top: 10px;}
+.abb1_margin_top_20{margin-top: 20px;}
+.abb1_margin_top_30{margin-top: 30px;}
+.abb1_margin_right_30{margin-right: 30px;}
+.abb1_margin_right_-45{margin-right: -45px;}
+.abb1_margin_right_20{margin-right: 20px;}
+.abb1_margin_left_20{margin-left: 20px;}
+.abb1_margin_bottom_40{margin-bottom: 40px;}
+/*---padding---*/
+.abb1_padding_15{padding: 15px;}
+.abb1_padding_top_15{padding-top: 15px;}
+.abb1_padding_top_20{padding-top: 20px;}
+.abb1_padding_bottom_20{padding-bottom: 20px;}
+.abb1_padding_bottom_40{padding-bottom: 40px;}
+.abb1_padding_right_5{padding-right: 5px;}
+.abb1_padding_right_0{padding-right: 0px;}
+.abb1_padding_left_8{padding-left: 8px;}
+/* .abb1_padding_left_73{padding-left: 73px;}
+.abb1_padding_left_163{padding-left: 163px;} */
+/*---text---*/
+.abb1_text_right{text-align: right;}
+.abb1_text_left{text-align: left;}
+/*---border---*/
+.abb1_border_top_2{border-top: 2px solid black;}
+
+/*=====================================================================*/
+/*------find ID------*/
+.abb1_find_id_container{background-color:#f9f6ec;padding-top: 20px;padding-bottom: 20px;}
+.abb1_find_id_div{margin:0 auto;width:1000px;text-align:left;background-color: white;padding-top: 20px;padding-bottom: 20px;}
+.abb1_find_id_inner_div{width:960px; margin-left:20px; margin-right:20px; border-top:1px solid #cec8ca;border-bottom:1px solid #cec8ca;padding-top: 20px;padding-bottom: 20px;margin:0 auto;text-align:center;padding-top: 0px;}
+.abb1_find_id_red_font{color: red;margin-right: -47px;}
+.abb1_finc_id_cancel_btn{float: left;margin-right: 30px;}
+.abb1_find_id_table_input{
+	margin-top: 15px;margin-bottom: 15px;
+}
+/*--------find PW success--------*/
+.abb1_find_pw_margin{margin-top: 15px;margin-bottom: 15px;}
+
+/*----------movie----------*/
+.abb1_nowMovie_table{border-collapse:collapse;}
+.abb1_nowMovie_border{border:1px solid #cdcdcd;}
+#review td{padding: 12;}
+.abb1_movie_review{border-bottom:1px solid #666666;width:1000px;margin-left: 20opx;}
+.abb1_movie_actor_title{margin-left: 170px;padding-top: 50px;}
+.abb1_movie_detail_font_color{color:#666;}
+.abb1_movie_trailer{margin-top: 30px; margin-bottom: 30px;}
+.abb1_movie_btn_reservation{font-size: 17px;color: #cdc197;text-decoration: none;}
+.abb1_movie_btn_reservation_td{background-color: #231f20;padding: 11px 30px;font-size: 17px;text-align: center;}
+.abb1_movie_rate{font-style:italic;font-family:serif;font-weight:700;font-size: 25px;}
+.abb1_movie_detail_trailer{margin:0 auto;width:100%;text-align:center;background-color:#231f20}
+.abb1_movie_detail_info{margin:0 auto;width:1000px;text-align:left;margin-top: 30px;}
+.abb1_movie_donutchart{margin:0 auto;margin-left: 90px;width: 900px; height: 450px;width:100%;text-align:center;}
+.abb1_movie_detail_actor_list{margin:0 auto;width:100%;text-align:center;margin-top: -10px;padding-bottom: 50px;}
+.abb1_movie_review_div{margin-top: 30px;margin-bottom: 30px;margin:0 auto;width:1000px;text-align:left;}
+.abb1_movie_review_box{padding-bottom: 20px;border-bottom: 1px solid black;}
+.abb1_movie_review_table{width: 1000px;}
+.abb1_movie_review_gpa{text-align: center;padding-left: 15px;padding-right: 15px;border:1px solid #cdcdcd;}
+.abb1_movie_review_btn{background-color: #231f20;padding: 11px 30px;font-size: 17px;text-align: center;border:1px solid #cdcdcd;}
+.abb1_movie_review_btn_text{color: #cdc197;font-size: 23px;}
+.abb1_height_50{height: 50px;}
+.abb1_height_55{height: 55px;}
+.abb1_movie_detail_synopsys{margin: 0 auto;width: 920px;text-align: left; margin-top: 30px;margin-left: 0px;}
+.abb1_movie_detail_synopsys_content{color:#666;height: 120px;}
+.abb1_movie_detail_container{width: 918px;margin: 0 auto;text-align: center;}
+.abb1_movie_now_btn{background-color: #231f20; color: #efebdb; padding: 11px 30px;margin-left: 20px;border: 2px solid #efebdb;font-size: 17px;}
+.abb1_movie_future_btn{background-color: #efebdb; color: #231f20; padding: 11px 30px;margin-left: 10px;font-size: 17px;}
+.abb1_movie_list_div{margin:0 auto;width:100%;padding-left:19%;margin-top: 15px;}
+.abb1_movie_table{border-collapse:collapse;border:1px solid #cdcdcd;width:229px;}
+.abb1_movie_table_title_td{border:1px solid #cdcdcd;font-size: 16px;font-style: inherit;padding-left: 10px;}
+.abb1_movie_table_rate_td{border:1px solid #cdcdcd;color: #919191;padding-left: 10px;}
+.abb1_movie_list_second_div{margin:0 auto;width:100%;text-align:center;padding-top: 30px; margin-bottom: 50px;}
+.abb1_movie_btns{margin: 0 auto;width:100%;text-align:center;margin-top: 30px;}
+
+/*------ login ------*/
+#login_form{background-color:#f9f6ec;margin-right: 0px;margin-left: 0px;padding-top: 30px;padding-bottom: 30px;}
+.abb1_login_maintext{color: #777; text-align: left;}
+.abb1_btn_baseform{height: 68px;}
+.abb1_find_table{width: 473px; margin-top: 20px}
+.abb1_a_findIdPw{text-align:right;}
+.abb1_a_findIdPw a{color: black; padding-right: 15px;}
+.abb1_btn_login{height: 68px;background-color: #231f20;color: #efebdb;font-size: 15px;}
+.abb1_btn_login{margin-left:5px;background-color:#231f20;color:#efebdb;height:75px;}
+.abb1_btn_signup{margin-left:5px;background-color:#ffffff;color:#231f20;border-color: #dfd7b7;width:70px;text-align: center;}
+.abb1_a_findId{color: black;padding-right: 15px;}
+.abb1_a_findPw{color: black;}
+.abb1_div_login{margin-right: 0px;margin-left: 0px;padding-top: 30px;padding-bottom: 30px;}
+.abb1_div_login_footer{background-color:#efebdb;padding-top: 20px;padding-bottom: 20px;margin-top: 15px;}
+
+/*------ signup ------*/
+.abb1_signup_form{background-color:#f9f6ec;margin-right: 0px;margin-left: 0px;padding-top: 30px;padding-bottom: 30px;}
+.abb1_signup_settings{margin: 0 auto;text-align: center;width: 473px;}
+.abb1_signup_maintext{text-align: left;margin-top: 0px;}
+.abb1_signup_form_control {width: 473px;margin-top: 20px;}
+.abb1_signup_form_control input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+.abb1_signup_form_control .abb1_login_btn{height: 68px;background-color: #231f20;color: #efebdb;font-size: 15px;}
+.abb1_signup_form_control .abb1_login_btn_signup{height: 60px;width: 120px;font-size: 15px;border-color:#dfd7b7;background-color:#ffffff;}
+.abb1_signup_form_control select{width: 100%}
+.abb1_signup_form_control select .btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}
+.ab1_signup_form_control select .btn_default{color:#333;background-color:#fff;border-color:#ccc}
+.abb1_sigunup_form_gender{font-size:15px;color:#969696;position:relative;z-index:10;display:block;float:left;width:237px;height:38px;border:1px solid #dcdcdc}
+.abb1_sigunup_form_gender input{position:absolute;z-index:9;top:0;left:0;width:100%;height:31px}
+.abb1_sigunup_form_gender label{line-height:32px;position:absolute;z-index:10;top:0;left:0;display:block;width:100%;height:36px;cursor:pointer;text-align:center;color:#676767;}
+.abb1_sigunup_form_gender label:hover{background:#e7e7e7}.abb1_btn_lg{display:block;padding:5px 7px;font-size:13px;line-height:1.3333333;border-radius:6px}
+.abb1_btn_verification{width:100%;background-color:#ffffff;color:#231f20;border-color: #dfd7b7;text-align: center;}
+.abb1_btn_confirm{margin-top: 30px; height: 53px;}
+.abb1_signup_success_div{margin:0 auto;width:1000px;text-align:left;background-color: white;padding-top:20px; padding-bottom: 20px;}
+.abb1_signup_success_div table{margin: 0 auto;}
+
+
+
+
+/*------ mypage ------*/
+.abb1_page_ul_inline{list-style-type:none;display:inline-block;}
+.abb1_page_ul_inline input{height: 50px;width: 150px;font-size: 17px;background-color: #efebdb}
+.abb1_page_li_inline{float:left;}
+.abb1_width_left_content{margin:0 auto;width:1000px;text-align:left;}
+.abb1_mypage_gnb_div{padding-top: 20px;margin:0 auto;width:1000px;text-align:left;}
+.abb1_mypage_select_btn{background-color:#231f20;color:#efebdb;padding: 10px;border-bottom:1px solid #231f20;}
+.abb1_mypage_not_select_btn{background-color:#f9f6ec;color:#231f20;padding: 10px;border-bottom:1px solid #231f20;}
+.abb1_mypage_reservation_content{margin:0 auto;width:1000px;text-align:left;background-color: white;padding-bottom: 20px;padding-top: 20px;}
+.abb1_mypage_margin{margin-top: -11px;}
+.abb1_margin_bottom_45{margin-bottom: 45px;}
+
+
+
+
+
+
+
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start:0px;
+}
+
+.abb1_star_rating a:first-child {margin-left:0;}
+.abb1_star_rating a.on {color:#000000;}
+.abb1_page_gnb_li{padding: 10px;border-bottom:1px solid #231f20;}
+.abb1_detail_gnb_li{padding: 10px;color: black;}
+.abb1_page_reservation{border-top:1px solid #cec8ca;border-bottom:1px solid #cec8ca;padding-top: 20px;padding-bottom: 20px;margin-left: 20px;margin-right: 20px;}
+.abb1_page_info{width:960px; margin-left:20px; margin-right:20px; border-top:1px solid #cec8ca;border-bottom:1px solid #cec8ca;padding-top: 20px;padding-bottom: 20px;text-align: center;}
+.abb1_page_info table{text-align: center;margin: 0 auto;}
+.abb1_detail_reservation{border:1px solid #cec8ca;margin-top: 20px;margin-left: 10px;margin-right: 10px;}
+.abb1_mypage_reservation{margin-left: 10px;margin-right: 10px;}
+
+
+/*-------updateInfo--------*/
+#updateInfo td{height: 55px;}
+#updateInfo strong{margin-left: 15px;margin-right: -15px; }
+.abb1_updateinfo_margin{margin-top: 30px;}
+/*--------findId--------*/
+.abb1_red_font{font-size: 15px;color: #ff0000;}
+
+/*----theater main----*/
+#movie_time_line table tr td{border:1px solid #c0c0c0;width: 137px;}
+#movie_time_line td{height: 35px;text-align: center}
+
+.abb1_margin_left_100{margin-left: 180px;margin-right: 180px;}
+.abb1_movie_time_line{background-color: white;padding: 30px;margin-left: 180px;margin-right: 180px;}
+/*-------multiplex--------*/
+#multiplex_info td{padding-left: 15px;padding-right: 15px;}
+.abb1_multiplex_border_right{border-right: 1px solid gray;}
+.abb1_multiplex_btn{background-color: white;border: 1px solid #c0c0c0;width: 170px;text-align: center;}
+.abb1_multiplex_a{padding-left: 20px;color: black;line-height: 50px;font-size: 17px;}
+.abb1_multiplex_select_btn{background-color: #cdc197;border: 1px solid #cdc197;width: 170px;text-align: center;}
+.abb1_multiplex_select_a{padding-left: 20px;color: black;line-height: 50px;width: 150px;font-size: 17px;}
+.abb1_multiplex_map{margin: 0 auto; height:500px; width:800px;}
+
+
+.abb1_multiplex_movie_title{font-size: 19px;margin-right: 15px;}
+.abb1_multiplex_calander{margin-left: 180px;margin-right: 180px;margin-bottom: 20px;}
+.abb1_multiplex_map_title{margin-left: 180px;margin-right: 180px;padding-top: 20px;}
+
+
+
+/*===========================================================================================*/
+.colorcheck{color: #efebdb;}
+
+
+
+
+/*-----------------별점------------------*/
+.star-input>.input,
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{
+    display: inline-block;
+    vertical-align: top;
+    background: url(../img/icon/star.png) no-repeat;
+}
+.star-input{
+    white-space: nowrap;
+}
+.star-input>.input{
+    display:inline-block;
+    width: 100px;
+    background-size: 100px;
+    height: 19px;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.star-input>.input>input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.star-input>.input.focus{
+    outline: 1px dotted #ddd;
+}
+.star-input>.input>label{
+    width: 10px;
+    height: 0;
+    padding: 19px 0 0 0;
+    overflow: hidden;
+    float: left;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.star-input>.input>label:hover,
+.star-input>.input>input:focus+label,
+.star-input>.input>input:checked+label{
+    background-size: 100px;
+    background-position: 0 bottom;
+}
+.star-input>.input>label:hover~label{
+    background-image: none;
+}
+.star-input>.input>label[for="p1"]{ 
+    width: 10px;
+    z-index: 10;
+}
+.star-input>.input>label[for="p2"]{ 
+    width: 20px;
+    z-index: 9;
+}
+.star-input>.input>label[for="p3"]{ 
+    width: 30px;
+    z-index: 8;
+}
+.star-input>.input>label[for="p4"]{ 
+    width: 40px;
+    z-index: 7;
+}
+.star-input>.input>label[for="p5"]{ 
+    width: 50px;
+    z-index: 6;
+}
+.star-input>.input>label[for="p6"]{ 
+    width: 60px;
+    z-index: 5;
+}
+.star-input>.input>label[for="p7"]{ 
+    width: 70px;
+    z-index: 4;
+}
+.star-input>.input>label[for="p8"]{ 
+    width: 80px;
+    z-index: 3;
+}
+.star-input>.input>label[for="p9"]{ 
+    width: 90px;
+    z-index: 2;
+}
+.star-input>.input>label[for="p10"]{ 
+    width: 100px;
+    z-index: 1;
+}
+.star-input>output{
+    display: inline-block;
+    width: 36px;
+    text-align: right;
+}
+.star-input>output>b{
+    font:bold 18px Helvetica, Arial, sans-serif;
+    vertical-align: middle;
+}
+
+.abb1_reservation_index{
+	color: white;
+	padding: 13px 85px;
+}
+.abb1_reservation_index:hover{
+	color: white;
+	padding: 13px 85px;
+}
+
+.abb1_more_movie{
+    width: 100%;
+    background: #d0d0d0;
+    text-align: center;
+    padding: 7px 0;
+    border-top: 1px solid #ababab;
+    border-bottom: 1px solid #ababab;
+    text-decoration: none;
+}
+
+.abb1_admin_movie_reg_ddl{
+	width: 100%;
+    padding: 0px 0 7px 5px;
+    font-size: 15px;
+    border: 1px solid #969595;
+}
+
+.abb1_register_month_ddl{
+	    font-size: 13px;
+    padding: 0px 0 7px 9px;
+}
+
+.selected{
+	background : #e7e7e7;
+}
+
+.unselected{
+	background : #fff;
+}
+
+.regExp{
+	color : #004080;
+}
+
+.notRegExp{
+	color : red;
+}
+
