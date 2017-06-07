@@ -77,6 +77,8 @@ public interface Mapper {
    public int updateArticle(Map<?,?> map) throws Exception;
    public int updateMainMovie(Map<?,?> map) throws Exception;
    public int updateShowing(Map<?,?> map) throws Exception;
+   public int updateShowDate(Map<?,?> map) throws Exception;
+   public int updateRegDate(Map<?,?> map) throws Exception;
    
    // DELETE
    public int deleteCustomer(Map<?,?> map) throws Exception;

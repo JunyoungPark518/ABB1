@@ -260,6 +260,12 @@
    <update id="updateMainMovie">
    UPDATE Movie SET trailer_main=#{value1} WHERE ${key}=#{value2}
    </update>
+   <update id="updateShowDate">
+   update Showing set show_date=#{date}
+   </update>
+   <update id="updateRegDate">
+   update Reservation set reg_date=#{date}
+   </update>
    
    
    

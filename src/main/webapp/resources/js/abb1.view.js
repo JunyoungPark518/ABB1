@@ -59,7 +59,7 @@ function indexView() {
         '            </td>' +
         '         </tr>' +
         '         <tr>' +
-        '            <td id="reservation"><a>예매하기</a></td>' +
+        '            <td id="reservation"><a class="abb1_white">예매하기</a></td>' +
         '         </tr>' +
         '      </table>' +
         '   </div>' +
@@ -1197,7 +1197,7 @@ function movieMainView() {
         '            <li><a id="order_by_gpa" href="javascript:void(0)">평점순</a></li>' +
         '         </ul>' +
         '      </div>' +
-        '      <div>' +
+        '      <div style="text-align: center;">' +
         '         <div id="movieList"></div>' +
         '         <div id="movieList2"></div>' +
         '      </div>' +

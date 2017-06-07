@@ -1,6 +1,4 @@
-SELECT * FROM Movie;
 
--- 1
 CREATE TABLE Notice(
 seq INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 file VARCHAR(200),
@@ -8,10 +6,9 @@ title VARCHAR(50) NOT NULL,
 content VARCHAR(500) NOT NULL,
 reg_date VARCHAR(10) NOT NULL,
 hits VARCHAR(6) NOT NULL
-);
+)default charset=utf8 collate=utf8_bin;
 ALTER TABLE Notice AUTO_INCREMENT=1;
 
--- 2
 CREATE TABLE Movie(
 seq INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR(30) NOT NULL,
@@ -29,11 +26,9 @@ pic_director VARCHAR(200),
 name_director VARCHAR(50),
 pic_actor VARCHAR(200),
 name_actor VARCHAR(50)
-);
+)default charset=utf8 collate=utf8_bin;
 ALTER TABLE Movie AUTO_INCREMENT=1;
 
-
--- 4
 CREATE TABLE Customer(
 id VARCHAR(15) PRIMARY KEY,
 pw VARCHAR(15) NOT NULL,
@@ -44,9 +39,8 @@ phone VARCHAR(13) NOT NULL,
 email VARCHAR(30) NOT NULL,
 point VARCHAR(5) NOT NULL,
 address VARCHAR(300) NOT NULL
-);
+)default charset=utf8 collate=utf8_bin;
 
--- 5
 CREATE TABLE Review(
 seq INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 spectator VARCHAR(8) NOT NULL,
@@ -57,29 +51,26 @@ customer_id VARCHAR(15),
 movie_seq INT,
 FOREIGN KEY(customer_id) REFERENCES Customer(id),
 FOREIGN KEY(movie_seq) REFERENCES Movie(seq)
-);
+)default charset=utf8 collate=utf8_bin;
 ALTER TABLE Review AUTO_INCREMENT=1;
 
--- 6
 CREATE TABLE Multiplex(
 seq INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(20) NOT NULL,
 address VARCHAR(40) NOT NULL,
 axis VARCHAR(40) NOT NULL
-);
+)default charset=utf8 collate=utf8_bin;
 ALTER TABLE Multiplex AUTO_INCREMENT=1;
 
--- 7
 CREATE TABLE Theater(
 seq INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(4) NOT NULL,
 total_seat VARCHAR(3) NOT NULL,
 multiplex_seq INT,
 FOREIGN KEY(multiplex_seq) REFERENCES Multiplex(seq)
-);
+)default charset=utf8 collate=utf8_bin;
 ALTER TABLE Theater AUTO_INCREMENT=1;
 
--- 8
 CREATE TABLE Article(
 seq INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 article_type VARCHAR(4) NOT NULL,
@@ -93,10 +84,9 @@ customer_id VARCHAR(15),
 multiplex_seq INT,
 FOREIGN KEY(customer_id) REFERENCES Customer(id),
 FOREIGN KEY(multiplex_seq) REFERENCES Multiplex(seq)
-);
+)default charset=utf8 collate=utf8_bin;
 ALTER TABLE Article AUTO_INCREMENT=1;
 
--- 9
 CREATE TABLE Comment(
 seq INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 reg_date VARCHAR(10) NOT NULL,
@@ -105,11 +95,9 @@ customer_id VARCHAR(15),
 article_seq INT,
 FOREIGN KEY(customer_id) REFERENCES Customer(id),
 FOREIGN KEY(article_seq) REFERENCES Article(seq)
-);
+)default charset=utf8 collate=utf8_bin;
 ALTER TABLE Comment AUTO_INCREMENT=1;
 
-
--- 10
 CREATE TABLE Showing(
 seq INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 start_time VARCHAR(5) NOT NULL,
@@ -120,10 +108,9 @@ movie_seq INT,
 theater_seq INT,
 FOREIGN KEY(movie_seq) REFERENCES Movie(seq),
 FOREIGN KEY(theater_seq) REFERENCES Theater(seq)
-);
+)default charset=utf8 collate=utf8_bin;
 ALTER TABLE Showing AUTO_INCREMENT=1;
 
--- 11
 CREATE TABLE Reservation(
 seq INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 id VARCHAR(30) NOT NULL,
@@ -135,10 +122,8 @@ customer_id VARCHAR(15),
 showing_seq INT,
 FOREIGN KEY(customer_id) REFERENCES Customer(id),
 FOREIGN KEY(showing_seq) REFERENCES Showing(seq)
-);
+)default charset=utf8 collate=utf8_bin;
 ALTER TABLE Reservation AUTO_INCREMENT=1;
-
-
 
 CREATE VIEW Information AS
 SELECT r.id AS resId,
@@ -245,7 +230,7 @@ mov.trailer_main AS movTrailerMain
 FROM Review r, Movie mov WHERE r.movie_seq = mov.seq;
 
 INSERT INTO Notice(file, title, content, reg_date, hits) VALUES ('notice_sample.jpg','개인정보 이용내역 안내','롯데시네마 개인정보 이용내역 안내드립니다.','2017-05-29','185');
-INSERT INTO Notice(file, title, content, reg_date, hits) VALUES ('default','2017 DU - ATHLON RACE 개최에 따른 교통 통제 안내','안녕하십니까, 롯데시네마 인천아시아드관입니다.<br/><br/>항상 저희 인천아시아드관을 사랑해 주시는 고객 여러분께 진심으로 감사드립니다.<br/><br/>2017 DU - ATHLON RACE 'AWAKEN INCHEON' 경기 일정으로 <br/><br/>2017년 5월 28일 (일)  09:10 ~ 10:00 까지 롯데시네마 주차장 진입로가 통제됩니다.<br/><br/>참고하시어 이용에 불편 없으시길 바랍니다.<br/><br/>아울러 통제가 끝나는 10:00 이후부터 영화 상영이 시작되오니 참고 부탁드립니다.<br/><br/>경기는 13:00까지 진행될 예정이오니 통제가 끝난 후 다소 혼잡하더라도<br/><br/>고객 여러분들의 너른 양해 부탁드립니다.<br/><br/>감사합니다.','2017-06-01','235');
+INSERT INTO Notice(file, title, content, reg_date, hits) VALUES ('default','2017 DU - ATHLON RACE 개최에 따른 교통 통제 안내','안녕하십니까, 롯데시네마 인천아시아드관입니다.<br/><br/>항상 저희 인천아시아드관을 사랑해 주시는 고객 여러분께 진심으로 감사드립니다.<br/><br/>2017 DU - ATHLON RACE "AWAKEN INCHEON" 경기 일정으로 <br/><br/>2017년 5월 28일 (일)  09:10 ~ 10:00 까지 롯데시네마 주차장 진입로가 통제됩니다.<br/><br/>참고하시어 이용에 불편 없으시길 바랍니다.<br/><br/>아울러 통제가 끝나는 10:00 이후부터 영화 상영이 시작되오니 참고 부탁드립니다.<br/><br/>경기는 13:00까지 진행될 예정이오니 통제가 끝난 후 다소 혼잡하더라도<br/><br/>고객 여러분들의 너른 양해 부탁드립니다.<br/><br/>감사합니다.','2017-06-01','235');
 
 INSERT INTO Movie(title, count, grade, released, info, synopsys, male_p, female_p, trailer_url, trailer_main, pic_main, pic_director, name_director, pic_actor, name_actor) 
 VALUES ('보안관','11','15','2017-05-03','드라마','과잉 수사로 잘리고 낙향한 전직 형사 대호(이성민)<br/>보안관을 자처하며 바다만큼 드넓은 오지랖으로 고향 ‘기장’ 을 수호한다.<br/>평화롭던 동네에 비치타운 건설을 위해 성공한 사업가 종진(조진웅)이 서울에서 내려온 그때,<br/>인근 해운대에 마약이 돌기 시작한다.<br/>종진의 모든 행보가 의심스러운 대호는 그를 마약사범으로 의심해 처남 덕만(김성균)을 조수로 ‘나 홀로 수사’에 나서지만 민심은 돈 많고 세련된 종진에게로 옮겨간 지 오래…<br/><br/>두고 봐라, 이래 당하고만 있겠나. 게임은 인자 시작이다!','0','0','https://www.youtube.com/embed/nRVuV8nuOmQ','0','movie_poster_0.png','director_0.jpg','김형주','actor_0.png','이성민');
@@ -348,7 +333,7 @@ INSERT INTO Showing(start_time, end_time, show_date, price, movie_seq, theater_s
 INSERT INTO Showing(start_time, end_time, show_date, price, movie_seq, theater_seq) VALUES ('14:00', '14:10', '2017-05-31', '10000', 9, 2);
 INSERT INTO Showing(start_time, end_time, show_date, price, movie_seq, theater_seq) VALUES ('15:00', '15:10', '2017-05-31', '10000', 9, 3);
 
-update Showing set show_date='2017-06-05' where show_date='2017-05-29';
+update Showing set show_date='2017-06-07';
 
 
 -- 남성 예매 
@@ -470,6 +455,10 @@ INSERT INTO Reservation(id, reg_date, canceled, price, hcount, customer_id, show
 INSERT INTO Reservation(id, reg_date, canceled, price, hcount, customer_id, showing_seq) VALUES ('1-1-1900-A08','2017-05-29','N','10000', '1','b',2);
 INSERT INTO Reservation(id, reg_date, canceled, price, hcount, customer_id, showing_seq) VALUES ('1-1-1900-A09','2017-05-29','N','10000', '1','b',2); -- 2 6개
 
+
+update Reservation set reg_date='2017-06-07';
+
+
 INSERT INTO Review(spectator, gpa, content, reg_date, customer_id, movie_seq) VALUES ('실관람객','7','재밌게 봤어요','2017-05-10','a', 1);
 INSERT INTO Review(spectator, gpa, content, reg_date, customer_id, movie_seq) VALUES ('실관람객','8','재밌게 봤어요','2017-05-10','a', 1);
 INSERT INTO Review(spectator, gpa, content, reg_date, customer_id, movie_seq) VALUES ('실관람객','9','재밌게 봤어요','2017-05-10','a', 1);
@@ -490,9 +479,9 @@ INSERT INTO Review(spectator, gpa, content, reg_date, customer_id, movie_seq) VA
 
 
 INSERT INTO Article(answer, article_type, title, content, file, reg_date, hits, customer_id, multiplex_seq) 
-VALUES ('N','문의','진주관 리뉴얼 안내','<p><strong>안녕하십니까, 롯데시네마 동성로관입니다.<br>&nbsp;<br>항상 저희 동성로관을 사랑해 주시는 고객 여러분께 진심으로 감사드립니다.<br>&nbsp;<br>'2017 컬러풀대구페스티벌' 일정으로 <br>&nbsp;<br></strong><strong><font color="#ff0000">2017년 5월 27일 (토) ~28 (일)&nbsp; 11:00 ~ 24:00 까지 롯데시네마 주차장 진입로가 통제됩니다.<br></font>&nbsp;<br>주차장 이용이 불가하오니, 지하철 이용을 권장해드립니다. </strong></p>','','2017-05-10','123','babungv1',1);
+VALUES ('N','문의','진주관 리뉴얼 안내','<p><strong>안녕하십니까, 롯데시네마 동성로관입니다.<br>&nbsp;<br>항상 저희 동성로관을 사랑해 주시는 고객 여러분께 진심으로 감사드립니다.<br>&nbsp;<br>"2017 컬러풀대구페스티벌" 일정으로 <br>&nbsp;<br></strong><strong><font color="#ff0000">2017년 5월 27일 (토) ~28 (일)&nbsp; 11:00 ~ 24:00 까지 롯데시네마 주차장 진입로가 통제됩니다.<br></font>&nbsp;<br>주차장 이용이 불가하오니, 지하철 이용을 권장해드립니다. </strong></p>','','2017-05-10','123','babungv1',1);
 INSERT INTO Article(answer, article_type, title, content, file, reg_date, hits, customer_id, multiplex_seq) 
-VALUES ('N','문의','성남관 리뉴얼 공사 안내','<p><strong>안녕하십니까, 롯데시네마 동성로관입니다.<br>&nbsp;<br>항상 저희 동성로관을 사랑해 주시는 고객 여러분께 진심으로 감사드립니다.<br>&nbsp;<br>'2017 컬러풀대구페스티벌' 일정으로 <br>&nbsp;<br></strong><strong><font color="#ff0000">2017년 5월 27일 (토) ~28 (일)&nbsp; 11:00 ~ 24:00 까지 롯데시네마 주차장 진입로가 통제됩니다.<br></font>&nbsp;<br>주차장 이용이 불가하오니, 지하철 이용을 권장해드립니다. </strong></p>','','2017-05-11','234','babungv2',1);
+VALUES ('N','문의','성남관 리뉴얼 공사 안내','<p><strong>안녕하십니까, 롯데시네마 동성로관입니다.<br>&nbsp;<br>항상 저희 동성로관을 사랑해 주시는 고객 여러분께 진심으로 감사드립니다.<br>&nbsp;<br>"2017 컬러풀대구페스티벌" 일정으로 <br>&nbsp;<br></strong><strong><font color="#ff0000">2017년 5월 27일 (토) ~28 (일)&nbsp; 11:00 ~ 24:00 까지 롯데시네마 주차장 진입로가 통제됩니다.<br></font>&nbsp;<br>주차장 이용이 불가하오니, 지하철 이용을 권장해드립니다. </strong></p>','','2017-05-11','234','babungv2',1);
 INSERT INTO Article(answer, article_type, title, content, file, reg_date, hits, customer_id, multiplex_seq) 
 VALUES ('N','문의','오케이캐시백 시스템 점검 안내','<p>안녕하십니까, 롯데시네마입니다.</p><br><p><br>항상 저희 롯데시네마를 사랑해주시는 고객님들께 감사 드립니다.</p><br><p><br>기프티쇼 시스템 점검 작업이 아래와 같이 진행되오니 이용에 참고하시기 바랍니다.</p><br><p>&nbsp;</p><br><p>● 일시 : 2017년 5월 25일(목) 00시 00분 ~ 08시 00분 (총 8시간)</p><br><p><br>● 내용 :&nbsp; 기프티쇼 시스템 업그레이드 및 서비스 점검</p><br><p><br>● 이용 제한 내용 <br>&nbsp;&nbsp; - 기프티쇼 Web, Mobile Web, App 서비스 접속 중단<br>&nbsp;&nbsp; - 기프티쇼 구매, 발송, 취소, 환불, 교환 중단<br>&nbsp;&nbsp; - 기 발송된 기프티쇼의 사용 여부 조회 및 사용 중단<br>&nbsp;&nbsp; - 롯데시네마 전 영화관에서 기프티쇼 상품 교환 불가</p><br><p>● 기타 <br>&nbsp;&nbsp; - 유효기간 5월 25일로 표기된 기프티쇼 교환권은 6월 1일까지 교환 가능</p><br><p><br>관련 문의사항은 기프티쇼 고객센터 1588-6474으로 연락 바랍니다.</p><br><p>감사합니다.<br></p>','','2017-05-12','345','babungv3',1);
 INSERT INTO Article(answer, article_type, title, content, file, reg_date, hits, customer_id, multiplex_seq) 
@@ -593,23 +582,3 @@ DROP TABLE Notice CASCADE;
 DROP VIEW Information;
 DROP VIEW Timetable;
 DROP VIEW Statistic;
-
-
-
-delete from reservation where seq='118';
-
-select * from Showing where movie_seq='17'
-
-select * from movie; where title='겟 아웃';
-
-delete from movie where seq='16';
-
-select * from Information where movTitle='겟 아웃';
-
-
-select trailer_main from movie;
-
-update movie set trailer_main=1 where seq=8;
-
-
-SELECT * FROM CUSTOMER WHERE ID='yhs9292'

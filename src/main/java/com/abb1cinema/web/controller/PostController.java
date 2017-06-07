@@ -2,8 +2,6 @@ package com.abb1cinema.web.controller;
 
 import java.util.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,12 +13,10 @@ import com.abb1cinema.web.service.PostService;
 
 @RestController
 public class PostController {
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@Autowired PostService postService;
 	
 	@RequestMapping(value="/post/reservation", method=RequestMethod.POST, consumes="application/json") 
 	public @ResponseBody Map<?,?> doReservation(@RequestBody Map<String, String> paramMap) throws Exception {
-		logger.info("PostController registerCustomer() {}","ENTER");
 		Map<String,Object> map = new HashMap<>();
 		map.put("id", paramMap.get("id"));
 		map.put("reg_date", paramMap.get("reg_date"));
@@ -37,7 +33,6 @@ public class PostController {
 
 	@RequestMapping(value="/post/article", method=RequestMethod.POST, consumes="application/json") 
 	public @ResponseBody Map<?,?> writeArticle(@RequestBody Map<String, String> paramMap) throws Exception {
-		logger.info("PostController writeArticle() {}","ENTER");
 		Map<String,Object> map = new HashMap<>();
 		map.put("article_type", paramMap.get("article_type"));
 		map.put("title", paramMap.get("title"));
@@ -54,7 +49,6 @@ public class PostController {
 	
 	@RequestMapping(value="/post/comment", method=RequestMethod.POST, consumes="application/json")
 	public @ResponseBody Map<?,?> writeComment(@RequestBody Map<String, String> paramMap) throws Exception {
-		logger.info("PostController writeComment() {}","ENTER");
 		Map<String,Object> map = new HashMap<>();
 		map.put("reg_date", paramMap.get("reg_date"));
 		map.put("content", paramMap.get("content"));
@@ -67,7 +61,6 @@ public class PostController {
 	
 	@RequestMapping(value="/post/review", method=RequestMethod.POST, consumes="application/json") 
 	public @ResponseBody Map<?,?> writeReview(@RequestBody Map<String, String> paramMap) throws Exception {
-		logger.info("PostController writeReview() {}","ENTER");
 		Map<String,Object> map = new HashMap<>();
 		map.put("spectator", paramMap.get("spectator"));
 		map.put("content", paramMap.get("content"));
@@ -82,7 +75,6 @@ public class PostController {
 	
 	@RequestMapping(value="/post/admin/movie", method=RequestMethod.POST, consumes="application/json") // spring p291
 	public @ResponseBody Map<?,?> registerMovie(@RequestBody Map<String, String> paramMap) throws Exception {
-	    logger.info("PostController registerMovie() {}","ENTER");
 	    Map<String,Object> map = new HashMap<>();
 	    map.put("title", paramMap.get("title"));
 	    map.put("grade", paramMap.get("grade"));
@@ -104,7 +96,6 @@ public class PostController {
 	
 	@RequestMapping(value="/post/notice", method=RequestMethod.POST, consumes="application/json") // spring p291
 	public @ResponseBody Map<?,?> registerNotice(@RequestBody Map<String, String> paramMap) throws Exception {
-		logger.info("PostController registerMovie() {}","ENTER");
 		Map<String,Object> map = new HashMap<>();
 		map.put("file", paramMap.get("file"));
 		map.put("title", paramMap.get("title"));
@@ -117,7 +108,6 @@ public class PostController {
 	
     @RequestMapping(value="/post/customer", method=RequestMethod.POST, consumes="application/json") // spring p291
     public @ResponseBody Map<?,?> registerCustomer(@RequestBody Map<String, String> paramMap) throws Exception {
-       logger.info("PostController registerCustomer() {}","ENTER");
        Map<String,Object> map = new HashMap<>();
        map.put("id", paramMap.get("id"));
        map.put("pw", paramMap.get("pw"));
@@ -128,14 +118,12 @@ public class PostController {
        map.put("email", paramMap.get("email"));
        map.put("address", paramMap.get("address"));
        Integer result=postService.registerCustomer(map);
-       logger.info("registerCustomer map: {}",map);
        map.put("result", result);
        return map;
     }
     
     @RequestMapping(value="/post/admin/showing", method=RequestMethod.POST, consumes="application/json")
     public @ResponseBody Map<?,?> postAdminShowing(@RequestBody Map<String,String> paramMap) throws Exception {
-       logger.info("PostController postAdminShowing() {}","ENTER");
        Map<String,Object> map = new HashMap<>();
        map.put("theater_seq", paramMap.get("theaterSeq"));
        map.put("show_date", paramMap.get("showDate"));
@@ -144,11 +132,9 @@ public class PostController {
        map.put("movie_seq", paramMap.get("movieSeq"));
        map.put("price", paramMap.get("price"));
        Integer result=postService.registerShowing(map);
-       logger.info("postAdminShowing() result {}",result);
        map.put("result", result);
        return map;
     }
-	
 }
 
 

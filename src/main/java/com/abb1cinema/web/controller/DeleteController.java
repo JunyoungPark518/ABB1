@@ -3,8 +3,6 @@ package com.abb1cinema.web.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,12 +13,10 @@ import com.abb1cinema.web.service.DeleteService;
 
 @RestController
 public class DeleteController {
-	private static final Logger logger = LoggerFactory.getLogger(DeleteController.class);
 	@Autowired DeleteService deleteService;
 	
 	@RequestMapping(value="/delete/customer", method=RequestMethod.POST, consumes="application/json") // spring p291
 	public @ResponseBody Map<?,?> delete(@RequestBody Map<String,String> paramMap) throws Exception {
-		logger.info("DeleteController delete() {}","ENTER");
 		Map<String,Object> map = new HashMap<>();
 		map.put("id", paramMap.get("id"));
 		Integer delete=deleteService.deleteCustomer(map);
@@ -83,7 +79,6 @@ public class DeleteController {
 	
 	@RequestMapping(value="/delete/admin/movie", method=RequestMethod.POST, consumes="application/json")
     public @ResponseBody Map<?,?> deleteAdminMovie(@RequestBody Map<String,String> paramMap) throws Exception {
-       logger.info("PutController deleteAdminMovie() {}","ENTER");
        Map<String,Object> map = new HashMap<>();
        map.put("value",paramMap.get("value"));
        map.put("key", "movie_seq");

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.abb1cinema.web.service.PutService;
+import com.abb1cinema.web.util.Util;
 
 @RestController
 public class PutController {
@@ -181,5 +182,14 @@ public class PutController {
 		map.put("result", result);
 		return map;
 	}
-	
+
+	@RequestMapping(value="/put/date", method=RequestMethod.POST, consumes="application/json")
+	public @ResponseBody Map<?,?> putDate(@RequestBody Map<String,String> paramMap) throws Exception {
+		logger.info("PutController putDate() {}","ENTER");
+		Map<String,Object> map = new HashMap<>();
+		map.put("date", Util.nowDate());
+		putService.updateRegDate(map);
+		putService.updateShowDate(map);
+		return map;
+	}
 }

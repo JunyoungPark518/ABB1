@@ -234,6 +234,17 @@ abb1.controller = (function() {
             })
         ).done(function() {
             abb1.cookie.setCookie('login', 'N');
+            $.ajax({
+		url: $.context()+"/put/date",
+		method: "POST",
+		data: JSON.stringify({}),
+		dataType: "json",
+		contentType: "application/json",
+		success : function(data){},
+		error : function(xhr,status,msg){
+			alert(msg);
+		}
+            });
             indexTiles();
         });
     };
@@ -3092,7 +3103,7 @@ abb1.controller = (function() {
             disableMovieListService(disShowList, selectedMovieSeq);
             $('#reservation_time').html('<h4>' + checkMultiplex(1) + '</h4><div id="movie_time_line" class="abb1_padding_15">' +
                 '<div class="abb1_padding_bottom_20">' +
-                '   <span id="movieTitle' + selectedMovieSeq + '" class="abb1_font_size_25"><strong id="movieName"></strong></span><a id="movieDetail" href="javascript:void(0)"><img src="/web/resources/img/icon/movieLink.png" alt=""></a>' +
+                '   <span id="movieTitle' + selectedMovieSeq + '" class="abb1_font_size_25"><strong id="movieName"></strong></span><a id="movieDetail" href="javascript:void(0)"><img src="'+$.context()+'/resources/img/icon/movieLink.png" alt=""></a>' +
                 '</div>' +
                 '<ul id="movie_timeline_ul" class="abb1_ul_inline"></ul>');
             var timetableView = '';
@@ -3681,7 +3692,6 @@ abb1.controller = (function() {
                 
                 var orderByRes = '<ul>';
                 for (var i = 0; i < 4; i++) {
-                	console.log(movieSort(statJsonArr)[i]);
                     var t = movieSort(statJsonArr)[i];
                     orderByRes += orderService(t, total);
                 }

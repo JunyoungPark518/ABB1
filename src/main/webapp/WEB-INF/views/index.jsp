@@ -18,7 +18,7 @@
             </td>
          </tr>
          <tr>
-            <td id="reservation"><a>예매하기</a></td>
+            <td id="reservation"><a class="abb1_white">예매하기</a></td>
          </tr>
       </table>
    </div>

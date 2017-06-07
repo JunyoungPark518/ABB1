@@ -42,7 +42,7 @@
 .abb1_tbboxoffice tr:first-child{height: 80px}
 .abb1_tbboxoffice_firstcol {width: 285px; background-color: #2A2E33; color: #BFB689;}
 .abb1_tbboxoffice_firstcol a {font-size: 14px; color: white; text-align: center; text-decoration: none; padding: 0 20px 0 20px; }
-.abb1_main_reservebtn {background-color: #ee1c25; color: white; font-weight: bold; font-size: 20px; height: 48px;}
+.abb1_main_reservebtn {background-color: #ee1c25; color: white; font-weight: bold; font-size: 20px; height: 30px;}
 .abb1_rank {list-style-type: none; display: inline-block;}
 .abb1_rank li { float: left; display: table; height: 30px; color: #1a1917; font-size: 14px; font-weight: bold; letter-spacing: -0.5px;}
 .abb1_rank a:hover{color: red; text-decoration: none}
@@ -620,7 +620,7 @@ body {
 .abb1_movie_detail_container{width: 918px;margin: 0 auto;text-align: center;}
 .abb1_movie_now_btn{background-color: #231f20; color: #efebdb; padding: 11px 30px;margin-left: 20px;border: 2px solid #efebdb;font-size: 17px;}
 .abb1_movie_future_btn{background-color: #efebdb; color: #231f20; padding: 11px 30px;margin-left: 10px;font-size: 17px;}
-.abb1_movie_list_div{margin:0 auto;width:100%;padding-left:19%;margin-top: 15px;}
+.abb1_movie_list_div{margin:0 auto;width:100%;margin-top: 15px;}
 .abb1_movie_table{border-collapse:collapse;border:1px solid #cdcdcd;width:229px;}
 .abb1_movie_table_title_td{border:1px solid #cdcdcd;font-size: 16px;font-style: inherit;padding-left: 10px;}
 .abb1_movie_table_rate_td{border:1px solid #cdcdcd;color: #919191;padding-left: 10px;}
@@ -885,5 +885,13 @@ ul, menu, dir {
 
 .notRegExp{
 	color : red;
+}
+
+.abb1_white{
+	color: white;
+}
+
+.abb1_white:hover{
+	color: white;
 }
 
