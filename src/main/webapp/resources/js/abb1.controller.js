@@ -977,6 +977,8 @@ abb1.controller = (function() {
                         var cemail = $('#email').val();
                         if (data.customer.name == cname && data.customer.email == cemail) {
                             customerFindIdSuccess(data.customer);
+                        } else {
+                            alert("해당 정보가 존재하지 않습니다.");
                         }
                     },
                     error: function(xhr, status, msg) {
@@ -1050,6 +1052,8 @@ abb1.controller = (function() {
                         var cemail = $('#email').val();
                         if (data.customer.id == cid && data.customer.email == cemail) {
                             customerFindPwSuccess(data.customer);
+                        } else {
+                            alert("해당 정보가 존재하지 않습니다.");
                         }
                     },
                     error: function(xhr, status, msg) {
@@ -1461,6 +1465,7 @@ abb1.controller = (function() {
         $('#id').text(abb1.cookie.getCookie('id'));
         $('#name').text(abb1.cookie.getCookie('name'));
         $('#birth').text(abb1.cookie.getCookie('birth'));
+        $('#email').text(abb1.cookie.getCookie('email'));
         var phone = abb1.cookie.getCookie('phone');
         $('#phone').attr('placeholder', abb1.cookie.getCookie('phone'));
         $('#gender').text(abb1.cookie.getCookie('gender') === 'M' ? '남자' : '여자');
@@ -1937,9 +1942,7 @@ abb1.controller = (function() {
                             dataType: 'json',
                             contentType: 'application/json',
                             success: function(data) {
-                            	//여기
                                 $('#id').text(data.customer.id);
-                                //$('#password').text(data.customer.password);
                                 $('#name').attr('value', data.customer.name);
                                 $('#birth').attr('value', data.customer.birth);
                                 $('#phone').attr('value', data.customer.phone);
@@ -1953,12 +1956,13 @@ abb1.controller = (function() {
                                         method: 'POST',
                                         data: JSON.stringify({
                                             id: $('#id').text(),
-                                            //pw: $('#password').text(),
                                             name: $('#name').val(),
                                             birth: $('#birth').val(),
                                             phone: $('#phone').val(),
                                             gender: $('#gender').val(),
-                                            email: $('#email').val()
+                                            email: $('#email').val(),
+                                            address: $('#address').val(),
+                                            address2: $('#address_detail').val()
                                         }),
                                         dataType: 'json',
                                         contentType: 'application/json',
@@ -3410,7 +3414,7 @@ abb1.controller = (function() {
                     alert('상영시간이 지났습니다. 예매가 불가능 합니다.');
                 });
                 
-                $('.goMap').on('click', function() {
+                /* $('.goMap').on('click', function() {
                     alert('미구현');
                     var goMap = $.magnificPopup.open({
                         items : {
@@ -3436,7 +3440,7 @@ abb1.controller = (function() {
                       alert('돌아가기');
                       $.magnificPopup.close();
                    });
-                });
+                }); */
                 
                 $('.goMD').on('click', function() {
                     var id = $(this).attr('id');

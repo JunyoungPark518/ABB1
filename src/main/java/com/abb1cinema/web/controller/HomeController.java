@@ -25,7 +25,7 @@ public class HomeController {
    public String main(Model model) {
       logger.info("HomeController main() {}","ENTER");
       model.addAttribute("context", Complex.ContextFactory.create());
-      return "index";
+      return "public:index";
    }
    @RequestMapping("/map")
    public String map(Model model) {

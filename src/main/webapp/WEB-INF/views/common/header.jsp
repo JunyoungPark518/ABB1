@@ -2,7 +2,7 @@
 <div id="header">
    <div class="abb1_no_padding abb1_width_100 abb1_text_center">
       <div style="margin: 0 auto;">
-         <a href="/web"><img src="${context}/resources/img/common/main_logo.png" alt=""/></a>
+         <a href="/"><img src="${context}/resources/img/common/main_logo.png" alt=""/></a>
       </div>
    </div>
    <nav id="boot-nav" class="abb1_navbar abb1_navbar-default">

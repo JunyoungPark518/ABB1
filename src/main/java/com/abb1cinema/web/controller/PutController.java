@@ -133,6 +133,7 @@ public class PutController {
 		map.put("phone", paramMap.get("phone"));
 		map.put("gender", paramMap.get("gender"));
 		map.put("email", paramMap.get("email"));
+		map.put("address", paramMap.get("address") + "/" + paramMap.get("address2"));
 		Integer result=putService.updateCustomer(map);
 		map.put("result", result);
 		return map;

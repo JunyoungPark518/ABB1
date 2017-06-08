@@ -1610,7 +1610,7 @@ function multiplexMainInfo(o) {
         '   <div id="multiplex_info_btn">' +
         '      <ul>' +
         '      <li><a class="goMain" href="javascript:void(0)"><strong>상영시간표</strong></a></li>' +
-        '      <li><a class="goMap" href="javascript:void(0)"><strong>위치정보</strong></a></li>' +
+        '      <li><a class="goMap" href="'+$.context()+'/map"><strong>위치정보</strong></a></li>' +
         '      </ul>' +
         '   </div>';
 }

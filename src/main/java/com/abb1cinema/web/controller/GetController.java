@@ -264,25 +264,28 @@ public class GetController {
 		return map;
 	}
 	
-	@RequestMapping(value="/get/customer/find", method=RequestMethod.POST, consumes="application/json")
-	public @ResponseBody Map<?,?> getCustomerFind(@RequestBody Map<String,String> paramMap) throws Exception {
-		logger.info("getCustomerFind() {}","ENTER");
+	@RequestMapping(value = "/get/customer/find", method = RequestMethod.POST, consumes = "application/json")
+	public @ResponseBody Map<?, ?> getCustomerFind(@RequestBody Map<String, String> paramMap) throws Exception {
+		logger.info("getCustomerFind() {}", "ENTER");
 		Map<String, Object> map = new HashMap<>();
-		map.put("name", paramMap.get("name"));
-		map.put("id", paramMap.get("id"));
 		map.put("email", paramMap.get("email"));
-		int countByName = getService.existCustomerByName(map);
 		Customer c = new Customer();
-		if(countByName!=0){
-			c = getService.findCustomerByName(map);
-		}
-		int countById = getService.existCustomerById(map);
-		if(countById!=0){
-			c = getService.findCustomerById(map);
+		if (paramMap.get("name") == null) {
+			map.put("id", paramMap.get("id"));
+			int countById = getService.existCustomerById(map);
+			if (countById != 0) {
+				c = getService.findCustomerById(map);
+			}
+			map.put("countById", countById);
+		} else if (paramMap.get("id") == null) {
+			map.put("name", paramMap.get("name"));
+			int countByName = getService.existCustomerByName(map);
+			if (countByName != 0) {
+				c = getService.findCustomerByName(map);
+			}
+			map.put("countByName", countByName);
 		}
 		map.put("customer", c);
-		map.put("countByName", countByName);
-		map.put("countById", countById);
 		map.put("success", "SUCCESS!!");
 		return map;
 	}
