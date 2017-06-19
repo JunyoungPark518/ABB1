@@ -262,6 +262,7 @@ VALUES ('노무현입니다', '1', '12', '2017-05-25', '드라마', '국회의�
 
 
 INSERT INTO Customer(id, pw, name, gender, birth, phone, email, point, address) VALUES ('admin','abb1','관리자','M','1992-10-15','010-4050-2695','yheisun@abb1.com','10000','서울/아파트');
+INSERT INTO Customer(id, pw, name, gender, birth, phone, email, point, address) VALUES ('datechanger','abb1','예매날짜변경','M','1992-10-15','010-4050-2695','yheisun@abb1.com','10000','서울/아파트');
 INSERT INTO Customer(id, pw, name, gender, birth, phone, email, point, address) VALUES ('babungv1','1234','박준용','M','1990-05-18','010-2206-8900','babungv@gmail.com','0','서울/아파트');
 INSERT INTO Customer(id, pw, name, gender, birth, phone, email, point, address) VALUES ('babungv2','1234','박준용','M','1990-05-18','010-2206-8900','babungv@gmail.com','0','서울/아파트');
 INSERT INTO Customer(id, pw, name, gender, birth, phone, email, point, address) VALUES ('babungv3','1234','박준용','M','1990-05-18','010-2206-8900','babungv@gmail.com','0','서울/아파트');

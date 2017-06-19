@@ -234,17 +234,6 @@ abb1.controller = (function() {
             })
         ).done(function() {
             abb1.cookie.setCookie('login', 'N');
-            $.ajax({
-		url: $.context()+"/put/date",
-		method: "POST",
-		data: JSON.stringify({}),
-		dataType: "json",
-		contentType: "application/json",
-		success : function(data){},
-		error : function(xhr,status,msg){
-			alert(msg);
-		}
-            });
             indexTiles();
         });
     };
@@ -893,7 +882,27 @@ abb1.controller = (function() {
                         } else if (data.permission === 'admin') {
                             alert('관리자로 로그인 하셨습니다.');
                             adminIndex();
-                        } else if (data.permission === 'customer') {
+                        } else if (data.permission === 'datechanger') {
+                            var regDateCount = data.regDateCount;
+                            var showDateCount = data.showDateCount;
+                            $.ajax({
+                               url: $.context()+"/put/date",
+                               method: "POST",
+                               data: JSON.stringify({
+                                  regDateCount : regDateCount,
+                                  showDateCount : showDateCount
+                               }),
+                               dataType: "json",
+                               contentType: "application/json",
+                               success : function(data){
+                                  alert('총 ' + data.regDateCount + '개의 예약 날짜와 \n'
+                                  + data.showDateCount + '개의 상영정보가 수정되었습니다.');
+                               },
+                               error : function(xhr,status,msg){
+                                  alert(msg);
+                               }
+                            });
+                         } else if (data.permission === 'customer') {
                             abb1.cookie.setCookie('id', data.customer.id);
                             abb1.cookie.setCookie('pw', data.customer.pw);
                             abb1.cookie.setCookie('name', data.customer.name);
@@ -907,7 +916,7 @@ abb1.controller = (function() {
                             index();
                         } else {
                             alert('비밀번호를 다시 확인하세요.');
-                        }
+                          }
                         $('#loginForm').submit();
                     },
                     error: function(xhr, status, msg) {

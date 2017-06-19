@@ -185,12 +185,23 @@ public class PutController {
 	}
 
 	@RequestMapping(value="/put/date", method=RequestMethod.POST, consumes="application/json")
-	public @ResponseBody Map<?,?> putDate(@RequestBody Map<String,String> paramMap) throws Exception {
-		logger.info("PutController putDate() {}","ENTER");
-		Map<String,Object> map = new HashMap<>();
-		map.put("date", Util.nowDate());
-		putService.updateRegDate(map);
-		putService.updateShowDate(map);
+	public @ResponseBody Map<?, ?> putDate(@RequestBody Map<String, String> paramMap) throws Exception {
+		logger.info("PutController putDate() {}", "ENTER");
+		Map<String, Object> map = new HashMap<>();
+		int regDateCount = Integer.parseInt(paramMap.get("regDateCount"));
+		int showDateCount = Integer.parseInt(paramMap.get("showDateCount"));
+		for (int i = 1; i <= regDateCount; i++) {
+			map.put("date", Util.randomDate());
+			map.put("seq", i);
+			putService.updateRegDate(map);
+		}
+		for (int i = 1; i <= showDateCount; i++) {
+			map.put("date", Util.randomDate());
+			map.put("seq", i);
+			putService.updateShowDate(map);
+		}
+		map.put("regDateCount", regDateCount);
+		map.put("showDateCount", showDateCount);
 		return map;
 	}
 }
